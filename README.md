@@ -57,7 +57,7 @@ function calculateScore(){
 
 <br/><br/>
 
-+ error 표기
++ error 표기 (빨간 *)
 
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba" width="400" height="350">
@@ -241,21 +241,21 @@ function shuffle(array) {
 
 ```
 
-<br/>
-+ 기본훈련 시작화면
+<br/><br/>
 
++ 기본훈련 시작화면
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4bcea9a-08d2-4923-95da-b8fe14505887" width="400" height="300">
 
-<br/>
-+ 기본훈련 랜덤번호 제시
+<br/><br/>
 
++ 기본훈련 랜덤번호 제시
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6e468596-c7c8-47f5-ab4f-00161b73fd3b" width="400" height="300">
 
-<br/>
-+ 기본훈련 정답선택 및 정답 나열
+<br/><br/>
 
++ 기본훈련 정답선택 및 정답 나열
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/4cb91015-848f-4984-8e9e-468b6505e540" width="400" height="300">
 
@@ -382,21 +382,21 @@ const numberDisplay = document.getElementById('numberDisplay');
       }
 ```
 
-<br/>
-+ 소음훈련 시작화면
+<br/><br/>
 
++ 소음훈련 시작화면
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/06c9feac-2ce2-4528-81db-152e1e281000" width="400" height="300">
 
-<br/>
-+ 소음훈련 랜덤번호 제시
+<br/><br/>
 
++ 소음훈련 랜덤번호 제시
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/51673a22-4669-417b-a393-69a087d90939" width="700" height="300">
 
-<br/>
-+ 소음훈련 정답선택 및 정답 나열
+<br/><br/>
 
++ 소음훈련 정답선택 및 정답 나열
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6ffaece5-6c0a-46d4-a3b4-029d6645cf42" width="500" height="300">
 
