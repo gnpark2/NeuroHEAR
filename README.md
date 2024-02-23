@@ -55,8 +55,17 @@ function calculateScore(){
 }
 ```
 
++ error 표기
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba">
+
++ 총 점수 표기
+
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6fd40514-c863-4f79-9ae7-9f2eceab1607">
+
++ 결과 보기 팝업
+
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/95f8e3e0-3047-4b9e-87fa-c5b532c6c61d">
 
 
 ***
