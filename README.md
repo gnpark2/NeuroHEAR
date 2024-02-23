@@ -12,7 +12,7 @@
 
 아래 코드는 저희 홈페이지의 자가진단 페이지에서 설문조사를 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
-"""javascript
+"""javaScript
 // 자가진단 총 점수 계산 함수
 function calculateScore(){
           var totalScore = 0;
@@ -59,7 +59,7 @@ function calculateScore(){
 
 아래 코드는 저희 홈페이지의 기본 훈련 페이지에서 wix의 개발자 모드를 통해 js코드로 작성한 것의 일부입니다.
 
-"""javascript
+"""javaScript
 $w.onReady(function () {
     $w('#number').hide();
     $w('#result').hide();
@@ -220,7 +220,7 @@ function shuffle(array) {
 
 아래 코드는 저희 홈페이지의 소음 훈련 페이지에서 훈련을 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
-"""
+"""javaScript
 const numberDisplay = document.getElementById('numberDisplay');
       const playButton = document.getElementById('playButton');
       const yesButton = document.getElementById('yesButton');
