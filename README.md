@@ -12,7 +12,7 @@
 
 아래 코드는 저희 홈페이지의 자가진단 페이지에서 설문조사를 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
-"""javaScript
+```javaScript
 // 자가진단 총 점수 계산 함수
 function calculateScore(){
           var totalScore = 0;
@@ -51,7 +51,7 @@ function calculateScore(){
             document.getElementById('totalScore').innerText = "체크되지 않은 항목이 있습니다.";
           }
 }
-"""
+```
 
 ### 기초훈련
 
@@ -59,7 +59,7 @@ function calculateScore(){
 
 아래 코드는 저희 홈페이지의 기본 훈련 페이지에서 wix의 개발자 모드를 통해 js코드로 작성한 것의 일부입니다.
 
-"""javaScript
+```javaScript
 $w.onReady(function () {
     $w('#number').hide();
     $w('#result').hide();
@@ -212,7 +212,7 @@ function shuffle(array) {
     return array;
 }
 
-"""
+```
 
 ### 심화훈련
 
@@ -220,7 +220,7 @@ function shuffle(array) {
 
 아래 코드는 저희 홈페이지의 소음 훈련 페이지에서 훈련을 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
-"""javaScript
+```javaScript
 const numberDisplay = document.getElementById('numberDisplay');
       const playButton = document.getElementById('playButton');
       const yesButton = document.getElementById('yesButton');
@@ -332,6 +332,6 @@ const numberDisplay = document.getElementById('numberDisplay');
         playButton.style.visibility = 'visible';
         audioElements.splice(0);
       }
-"""
+```
 
 완성한 wix의 사이트 : (링크)
