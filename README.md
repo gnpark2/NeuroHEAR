@@ -56,9 +56,7 @@ function calculateScore(){
 ```
 
 
-<p align="center">
-          <img src="https://private-user-images.githubusercontent.com/55909071/307451940-11690ebd-e84f-4cf5-be0e-bbdacecdbfc1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDg3MjMwNjIsIm5iZiI6MTcwODcyMjc2MiwicGF0aCI6Ii81NTkwOTA3MS8zMDc0NTE5NDAtMTE2OTBlYmQtZTg0Zi00Y2Y1LWJlMGUtYmJkYWNlY2RiZmMxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjIzVDIxMTI0MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYyYTUyYmFjMjZmM2FlMjcyYWQ5OWQ4YTk3ZjY0NjExODlmYzIwNDhiZjgxZDFhNTg2ZmJjZmRmMjNkNjJjNWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.aFsmeQ5nEEctzN6wG2fYNJQRged97n26hZx8ah5yLPE">
-</p>
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba">
 
 
 ***
