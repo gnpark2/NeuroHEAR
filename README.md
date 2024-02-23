@@ -57,15 +57,15 @@ function calculateScore(){
 
 + error 표기
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba" width="400" height="300">
 
 + 총 점수 표기
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6fd40514-c863-4f79-9ae7-9f2eceab1607">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6fd40514-c863-4f79-9ae7-9f2eceab1607" width="400" height="300">
 
 + 결과 보기 팝업
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/95f8e3e0-3047-4b9e-87fa-c5b532c6c61d">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/95f8e3e0-3047-4b9e-87fa-c5b532c6c61d" width="400" height="300">
 
 
 ***
@@ -233,15 +233,15 @@ function shuffle(array) {
 
 + 기본훈련 시작화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4bcea9a-08d2-4923-95da-b8fe14505887">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4bcea9a-08d2-4923-95da-b8fe14505887" width="400" height="300">
 
 + 기본훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6e468596-c7c8-47f5-ab4f-00161b73fd3b">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6e468596-c7c8-47f5-ab4f-00161b73fd3b" width="400" height="300">
 
 + 기본훈련 정답선택 및 정답 나열
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/4cb91015-848f-4984-8e9e-468b6505e540">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/4cb91015-848f-4984-8e9e-468b6505e540" width="400" height="300">
 
 ***
 
@@ -371,7 +371,7 @@ const numberDisplay = document.getElementById('numberDisplay');
 
 + 소음훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/51673a22-4669-417b-a393-69a087d90939" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/51673a22-4669-417b-a393-69a087d90939" width="600" height="300">
 
 + 소음훈련 정답선택 및 정답 나열
 
