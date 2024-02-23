@@ -12,9 +12,8 @@
 
 아래 코드는 저희 홈페이지의 자가진단 페이지에서 설문조사를 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
-+ 자가진단의 총 점수 계산 함수
-
 """javascript
+// 자가진단 총 점수 계산 함수
 function calculateScore(){
           var totalScore = 0;
           var radios = document.querySelectorAll('input[type="radio"]:checked');
