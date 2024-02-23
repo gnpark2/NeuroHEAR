@@ -376,4 +376,7 @@ const numberDisplay = document.getElementById('numberDisplay');
 + 소음훈련 정답선택 및 정답 나열
 
 <img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6ffaece5-6c0a-46d4-a3b4-029d6645cf42" width="400" height="300">
+
+***
+
 완성한 wix의 사이트 : (링크)
