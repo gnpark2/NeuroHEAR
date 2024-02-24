@@ -60,14 +60,14 @@ function calculateScore(){
 + error 표기 (빨간 *)
 
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba" width="400" height="350">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/ea0dc18f-c182-4b3a-bbd0-b043173eb2ba" width="400" height="325">
 
 <br/><br/>
 
 + 총 점수 표기
 
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6fd40514-c863-4f79-9ae7-9f2eceab1607" width="400" height="350">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6fd40514-c863-4f79-9ae7-9f2eceab1607" width="400" height="325">
 
 <br/><br/>
 
@@ -214,25 +214,25 @@ function calculateScore(){
 
 + 기본훈련 시작화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/1ef9e56a-fe52-479d-91e2-b4c61431a989" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/1ef9e56a-fe52-479d-91e2-b4c61431a989" width="500" height="300">
 
 <br/><br/>
 
 + 기본훈련 시작시 진행화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b53af2f2-eab0-467f-81a5-59e2d85c8594" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b53af2f2-eab0-467f-81a5-59e2d85c8594" width="500" height="300">
 
 <br/><br/>
 
 + 기본훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/cce07861-ff44-4493-9eb7-7906c19b2783" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/cce07861-ff44-4493-9eb7-7906c19b2783" width="500" height="300">
 
 <br/><br/>
 
 + 기본훈련 정답선택 및 정답 나열
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e93f95d2-9792-43f8-90e6-4ac6f7c813a6" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e93f95d2-9792-43f8-90e6-4ac6f7c813a6" width="500" height="300">
 
 
 ***
@@ -374,19 +374,19 @@ function calculateScore(){
 
 + 소음훈련 시작화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4838427-16d3-4e5a-9b5b-66bc938c7b76" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4838427-16d3-4e5a-9b5b-66bc938c7b76" width="500" height="300">
 
 <br/><br/>
 
 + 소음훈련 시작시 진행화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/23cf8af3-2d49-4751-a23e-6724e4511d36" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/23cf8af3-2d49-4751-a23e-6724e4511d36" width="500" height="300">
 
 <br/><br/>
 
 + 소음훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b27b4210-a721-4e27-9a80-e4576eb6b09d" width="700" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b27b4210-a721-4e27-9a80-e4576eb6b09d" width="500" height="300">
 
 <br/><br/>
 
