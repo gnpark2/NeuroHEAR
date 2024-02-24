@@ -214,19 +214,25 @@ function calculateScore(){
 
 + 기본훈련 시작화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4bcea9a-08d2-4923-95da-b8fe14505887" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/1ef9e56a-fe52-479d-91e2-b4c61431a989" width="400" height="300">
+
+<br/><br/>
+
++ 기본훈련 시작시 진행화면
+
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b53af2f2-eab0-467f-81a5-59e2d85c8594" width="400" height="300">
 
 <br/><br/>
 
 + 기본훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6e468596-c7c8-47f5-ab4f-00161b73fd3b" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/cce07861-ff44-4493-9eb7-7906c19b2783" width="400" height="300">
 
 <br/><br/>
 
 + 기본훈련 정답선택 및 정답 나열
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/4cb91015-848f-4984-8e9e-468b6505e540" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e93f95d2-9792-43f8-90e6-4ac6f7c813a6" width="400" height="300">
 
 
 ***
@@ -368,19 +374,25 @@ function calculateScore(){
 
 + 소음훈련 시작화면
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/06c9feac-2ce2-4528-81db-152e1e281000" width="400" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/e4838427-16d3-4e5a-9b5b-66bc938c7b76" width="400" height="300">
+
+<br/><br/>
+
++ 소음훈련 시작시 진행화면
+
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/23cf8af3-2d49-4751-a23e-6724e4511d36" width="400" height="300">
 
 <br/><br/>
 
 + 소음훈련 랜덤번호 제시
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/51673a22-4669-417b-a393-69a087d90939" width="700" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/b27b4210-a721-4e27-9a80-e4576eb6b09d" width="700" height="300">
 
 <br/><br/>
 
 + 소음훈련 정답선택 및 정답 나열
 
-<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/6ffaece5-6c0a-46d4-a3b4-029d6645cf42" width="500" height="300">
+<img src="https://github.com/gnpark2/NeuroHEAR/assets/55909071/67e1217e-1563-4439-a103-72b4ce62719e" width="500" height="300">
 
 
 ***
