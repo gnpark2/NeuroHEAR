@@ -403,4 +403,4 @@ const numberDisplay = document.getElementById('numberDisplay');
 
 ***
 
-완성한 wix의 사이트 : (링크)
+완성한 wix의 사이트 : [NeuroHEAR](https://gnpark2.wixsite.com/my-site-1)
