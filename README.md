@@ -84,15 +84,21 @@ function calculateScore(){
 
 치매 예방을 위해 작업 기억 촉진 과제를 제공합니다.
 
-아래 코드는 저희 홈페이지의 기본 훈련 페이지에서 wix의 개발자 모드를 통해 js코드로 작성한 것의 일부입니다.
+아래 코드는 저희 홈페이지의 기본 훈련 페이지에서 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
 ```javaScript
-$w.onReady(function () {
-    $w('#number').hide();
-    $w('#result').hide();
-    $w('#answer').hide();
+      //html의 요소들과 연결
+      const numberDisplay = document.getElementById('numberDisplay');
+      const notion = document.getElementById('notion');
+      const question = document.getElementById('question');
+      const playButton = document.getElementById('playButton');
+      const yesButton = document.getElementById('yesButton');
+      const noButton = document.getElementById('noButton');
+      const result = document.getElementById('result');
+      const answer = document.getElementById('answer');
 
-    var audioFiles = [
+      //숫자 음성 파일
+      var audioFiles = [
         'https://static.wixstatic.com/mp3/8cecc1_75216b17b77d470b8ac160e238c4cb2a.wav',
         'https://static.wixstatic.com/mp3/8cecc1_93551c75a4204773ad7dd8ccae12f3a9.wav',
         'https://static.wixstatic.com/mp3/8cecc1_810743c4945c4f4f87f15058c32108f7.wav',
@@ -102,143 +108,106 @@ $w.onReady(function () {
         'https://static.wixstatic.com/mp3/8cecc1_46dc3391794b40428c06f024c8bfb6cb.wav',
         'https://static.wixstatic.com/mp3/8cecc1_049c4b8bf3404d52824a1fe63135e25c.wav',
         'https://static.wixstatic.com/mp3/8cecc1_37af5b5bd11a48f5855d00a29aaf28a9.wav',
-        'https://static.wixstatic.com/mp3/8cecc1_2c73088560c0496fa0e4c1d527a3b25d.wav',
-    ];
+        'https://static.wixstatic.com/mp3/8cecc1_2c73088560c0496fa0e4c1d527a3b25d.wav'
+      ];
+      var audioElements = [];
 
-    const findIndex = new Array();
-
-    // play버튼 클릭 이벤트 핸들링
-    $w('#playButton').onClick(() => {
-        $w('#playButton').hide();
-        $w('#number').hide();
-        $w('#result').hide();
-        $w('#answer').hide();
-        const shuffledAudioFiles = shuffle(audioFiles).slice(0, 3);
-
-        audioFiles = [
-            'https://static.wixstatic.com/mp3/8cecc1_75216b17b77d470b8ac160e238c4cb2a.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_93551c75a4204773ad7dd8ccae12f3a9.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_810743c4945c4f4f87f15058c32108f7.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_d3a9d9993f0145dd931971a5618b7eaa.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_3e5b11916bd44a43b4c3f71a312b7977.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_98b56d95c79e484894cf221241616047.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_46dc3391794b40428c06f024c8bfb6cb.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_049c4b8bf3404d52824a1fe63135e25c.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_37af5b5bd11a48f5855d00a29aaf28a9.wav',
-            'https://static.wixstatic.com/mp3/8cecc1_2c73088560c0496fa0e4c1d527a3b25d.wav',
-        ];
-
-        for(let i = 0; i < 3; i++){
-        findIndex[i] = audioFiles.indexOf(shuffledAudioFiles[i]);
+      // 배열을 무작위로 섞는 함수
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
         }
+        return array;
+      }
 
-        const answer = findIndex.join();
+      // 시작하기 버튼과 상호작용 함수
+      function playAudios() {
+        numberDisplay.style.visibility = 'hidden';
+        question.style.display = 'none';
+        result.style.display = 'none';
+        result.style.visibility = 'hidden';
+        answer.style.display = 'none';
+        playButton.style.visibility = 'hidden';
 
-        $w('#answer').text = answer;
+        notion.innerHTML = "소리가 안들리면 볼륨을 높여주세요.";
+        notion.style.display = 'block';
 
-        console.log(shuffledAudioFiles);
-        console.log(findIndex);
-        console.log(audioFiles);
-        console.log($w('#audioPlayer1').src);
-        console.log($w('#audioPlayer2').src);
-        console.log($w('#audioPlayer3').src);
+        var shuffledAudio = shuffle([...audioFiles]);
+        var selectedIndexes = shuffledAudio.slice(0, 3);
 
-        // 오디오 재생 지연 시간 설정 (1.2초 간격)
-        const delay = 1200;
+        // 오디오 요소 생성하여 배열에 추가
+        selectedIndexes.forEach(audioUrl => {
+          var audio = new Audio(audioUrl);
+          audioElements.push(audio);
+        });
 
-        // 오디오 재생 함수
-        let index = 0;
+        var delay = 1200; // 1.2초 딜레이
+        var index = 0;
+
+        // 다음 오디오 재생 함수
         function playNextAudio() {
-            if (index < shuffledAudioFiles.length) {
-                const selectedAudio = shuffledAudioFiles[index];
-                setTimeout(() => {
-                    $w(`#audioPlayer${index + 1}`).src = selectedAudio;
-                    $w(`#audioPlayer${index + 1}`).play();
-                    index++;
-                    playNextAudio();
-                }, delay);
-            } else {
-                // 모든 오디오 재생이 완료된 후에 사용자에게 보여지는 숫자 생성
-                const randomNumber = Math.floor(Math.random() * 10);
-                $w('#number').text = randomNumber.toString();
-
-                setTimeout(() =>{
-                    $w('#number').show();
-                    $w('#audioPlayer3').stop();
-                }, delay);
-            }
+          if (index < audioElements.length) {
+            audioElements[index].play();
+            index++;
+            setTimeout(playNextAudio, delay);
+          } else {
+            displayNumber();
+          }
         }
+
         // 재생 함수 호출
         playNextAudio();
-        // audio 재생 완료 후 버튼 나타냄
-        $w('#yesButton').show();
-        $w('#noButton').show();
-    });
+      }
 
-    // '예' 버튼 클릭 이벤트 핸들링
-    $w('#yesButton').onClick(() => {
-        const displayedNumber = parseInt($w('#number').text);
-        var isCorrect = true;
-        for(let j = 0; j < 3; j++){
-            if(findIndex[j] == displayedNumber){
-                // 보여지는 숫자와 재생된 숫자가 같을 경우 stop
-                isCorrect = true;
-                break;
-            } else {
-                isCorrect = false;
-            }
+      // 무작위 숫자 관련 시각화 제어 함수
+      function displayNumber(){
+        var randomNumber = Math.floor(Math.random() * 10);
+        numberDisplay.innerHTML = randomNumber;
+        question.innerHTML = "앞서 들린 숫자에 보이는 숫자("+randomNumber+")가 있었나요?";
+        notion.style.display = 'none';
+        question.style.display = "block";
+        numberDisplay.style.visibility = 'visible';
+        yesButton.style.visibility = 'visible';
+        yesButton.style.display = "block";
+        noButton.style.visibility = 'visible';
+        noButton.style.display = "block";
+        result.style.visibility = 'hidden';
+        yesButton.setAttribute("data-random-number", randomNumber);
+      }
+
+      // 정답과 반응 제어 함수
+      function checkAnswer(isYes){
+        var randomNumber = parseInt(yesButton.getAttribute("data-random-number"));
+        var audioIndexes = [];
+        for (var i = 0; i < 3; i++){
+          var audioUrl = audioElements[i].src;
+          audioIndexes.push(audioFiles.indexOf(audioUrl));
         }
-        if (isCorrect) {
-            $w('#result').text = '정답입니다!';
+        answer.innerHTML = "방금 나온 숫자는 : "+ audioIndexes[0]+ ", "+ audioIndexes[1]+", "+audioIndexes[2]+ "입니다.";
+        answer.style.display = 'block';
+        result.style.display = 'block';
+        result.style.visibility = 'visible';
+
+        // 매개변수에 따른 정답 반응
+        if(isYes){
+          if(audioIndexes.includes(randomNumber)){
+            result.innerHTML = "정답입니다!";
+          } else {
+            result.innerHTML = "오답입니다.";
+          }
         } else {
-            $w('#result').text = '오답입니다.';
+          if(!audioIndexes.includes(randomNumber)){
+            result.innerHTML = "정답입니다!";
+          } else {
+            result.innerHTML = "오답입니다.";
+          }
         }
-        $w('#yesButton').hide();
-        $w('#noButton').hide();
-        $w('#answer').show();
-        $w('#playButton').show();
-        $w('#result').show();
-    });
-
-    // '아니오' 버튼 클릭 이벤트 핸들링
-    $w('#noButton').onClick(() => {
-        const displayedNumber = parseInt($w('#number').text);
-        var isCorrect = true;
-        for(let j = 0; j < 3; j++){
-            if(findIndex[j] == displayedNumber){
-                // 보여지는 숫자와 재생된 숫자가 같을 경우 stop
-                isCorrect = true;
-                break;
-            } else {
-                isCorrect = false;
-            }
-        }
-        if (!isCorrect) {
-            $w('#result').text = '정답입니다!';
-        } else {
-            $w('#result').text = '오답입니다.';
-        }
-        $w('#yesButton').hide();
-        $w('#noButton').hide();
-        $w('#answer').show();
-        $w('#playButton').show();
-        $w('#result').show();
-    });
-});
-
-// 배열을 무작위로 섞는 함수
-function shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
-
+        yesButton.style.visibility = 'hidden';
+        noButton.style.visibility = 'hidden';
+        playButton.style.visibility = 'visible';
+        audioElements.splice(0);
+      }
 ```
 
 <br/><br/>
@@ -269,13 +238,17 @@ function shuffle(array) {
 아래 코드는 저희 홈페이지의 소음 훈련 페이지에서 훈련을 wix의 html 코드 요소 추가로 작성한 것의 일부입니다.
 
 ```javaScript
-const numberDisplay = document.getElementById('numberDisplay');
+      //html의 요소들과 연결
+      const numberDisplay = document.getElementById('numberDisplay');
+      const notion = document.getElementById('notion');
+      const question = document.getElementById('question');
       const playButton = document.getElementById('playButton');
       const yesButton = document.getElementById('yesButton');
       const noButton = document.getElementById('noButton');
       const result = document.getElementById('result');
       const answer = document.getElementById('answer');
 
+      //숫자 음성 파일
       var audioFiles = [
         'https://static.wixstatic.com/mp3/8cecc1_75216b17b77d470b8ac160e238c4cb2a.wav',
         'https://static.wixstatic.com/mp3/8cecc1_93551c75a4204773ad7dd8ccae12f3a9.wav',
@@ -299,12 +272,17 @@ const numberDisplay = document.getElementById('numberDisplay');
         return array;
       }
 
+      // 시작하기 버튼과 상호작용 함수
       function playAudios() {
         numberDisplay.style.visibility = 'hidden';
+        question.style.display = 'none';
         result.style.display = 'none';
         result.style.visibility = 'hidden';
         answer.style.display = 'none';
         playButton.style.visibility = 'hidden';
+
+        notion.innerHTML = "소리가 안들리면 볼륨을 높여주세요.";
+        notion.style.display = 'block';
 
         var shuffledAudio = shuffle([...audioFiles]);
         var selectedIndexes = shuffledAudio.slice(0, 3);
@@ -317,12 +295,9 @@ const numberDisplay = document.getElementById('numberDisplay');
 
         var delay = 1200; // 1.2초 딜레이
         var index = 0;
-        var noiseAudio = new Audio('https://static.wixstatic.com/mp3/8cecc1_9610805c627045259a3e9f9c73b7e06a.wav'); // noise 파일 불러오기
+        var noiseAudio = new Audio('https://static.wixstatic.com/mp3/8cecc1_9610805c627045259a3e9f9c73b7e06a.wav'); // 노이즈 파일
 
-        // 재생 함수 호출
-        playNextAudio();
-
-        // 오디오 재생 함수
+        // 다음 오디오 재생 함수
         function playNextAudio() {
           if (index < audioElements.length) {
             audioElements[index].play();
@@ -334,12 +309,18 @@ const numberDisplay = document.getElementById('numberDisplay');
             displayNumber();
           }
         }
+
+        // 재생 함수 호출
+        playNextAudio();
       }
 
       // 무작위 숫자 관련 시각화 제어 함수
       function displayNumber(){
         var randomNumber = Math.floor(Math.random() * 10);
         numberDisplay.innerHTML = randomNumber;
+        question.innerHTML = "앞서 들린 숫자에 보이는 숫자("+randomNumber+")가 있었나요?";
+        notion.style.display = 'none';
+        question.style.display = "block";
         numberDisplay.style.visibility = 'visible';
         yesButton.style.visibility = 'visible';
         yesButton.style.display = "block";
@@ -361,6 +342,7 @@ const numberDisplay = document.getElementById('numberDisplay');
         answer.style.display = 'block';
         result.style.display = 'block';
         result.style.visibility = 'visible';
+
         // 매개변수에 따른 정답 반응
         if(isYes){
           if(audioIndexes.includes(randomNumber)){
