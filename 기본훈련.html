@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: "Questrial", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .center {
+        margin-top: 30px;
+        font-size: 30px;
+        text-align: center;
+      }
+      .Button {
+        font-size: 24px;
+        width: 160px;
+        height: 50px;
+        background-color: #01C5A2;
+        border: none;
+        border-radius: 7px;
+        color: white;
+        box-shadow: 2px 4px 0 rgb(0,0,0,0.5);
+      }
+      .Button:hover {
+        background-color: #0FB194;
+      }
+      .Button:active {
+        margin-left: 3px;
+        margin-top: 3px;
+        box-shadow: 2px 2px 0 rgb(0,0,0,0.5);
+      }
+      .text {
+        margin-top: 7px;
+      }
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <button class="Button" id="playButton" onclick="playAudios()">시작하기</button>
+      <div id="numberDisplay"></div>
+      <div id="notion"></div>
+      <div id="question" style="display: none;"></div>
+      <br><br>
+      <button class="Button" id="yesButton" style="display: none; float: left;" onclick="checkAnswer(true)">있었다.</button>
+      <button class="Button" id="noButton" style="display: none; float: right;" onclick="checkAnswer(false)">없었다.</button>
+      <div class="text" id="result" style="display: none;"></div>
+      <div class="text" id="answer" style="display: none;"></div>
+    </div>
+
+    <script>
+      const numberDisplay = document.getElementById('numberDisplay');
+      const notion = document.getElementById('notion');
+      const question = document.getElementById('question');
+      const playButton = document.getElementById('playButton');
+      const yesButton = document.getElementById('yesButton');
+      const noButton = document.getElementById('noButton');
+      const result = document.getElementById('result');
+      const answer = document.getElementById('answer');
+
+      var audioFiles = [
+        'https://static.wixstatic.com/mp3/8cecc1_75216b17b77d470b8ac160e238c4cb2a.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_93551c75a4204773ad7dd8ccae12f3a9.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_810743c4945c4f4f87f15058c32108f7.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_d3a9d9993f0145dd931971a5618b7eaa.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_3e5b11916bd44a43b4c3f71a312b7977.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_98b56d95c79e484894cf221241616047.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_46dc3391794b40428c06f024c8bfb6cb.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_049c4b8bf3404d52824a1fe63135e25c.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_37af5b5bd11a48f5855d00a29aaf28a9.wav',
+        'https://static.wixstatic.com/mp3/8cecc1_2c73088560c0496fa0e4c1d527a3b25d.wav'
+      ];
+      var audioElements = [];
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      function playAudios() {
+        numberDisplay.style.visibility = 'hidden';
+        question.style.display = 'none';
+        result.style.display = 'none';
+        result.style.visibility = 'hidden';
+        answer.style.display = 'none';
+        playButton.style.visibility = 'hidden';
+
+        notion.innerHTML = "소리가 안들리면 볼륨을 높여주세요.";
+        notion.style.display = 'block';
+
+        var shuffledAudio = shuffle([...audioFiles]);
+        var selectedIndexes = shuffledAudio.slice(0, 3);
+
+        // 오디오 요소 생성하여 배열에 추가
+        selectedIndexes.forEach(audioUrl => {
+          var audio = new Audio(audioUrl);
+          audioElements.push(audio);
+        });
+
+        var delay = 1200; // 1.2초 딜레이
+        var index = 0;
+
+        // 다음 오디오 재생 함수
+        function playNextAudio() {
+          if (index < audioElements.length) {
+            audioElements[index].play();
+            index++;
+            setTimeout(playNextAudio, delay);
+          } else {
+            displayNumber();
+          }
+        }
+
+        // 재생 함수 호출
+        playNextAudio();
+      }
+
+      function displayNumber(){
+        var randomNumber = Math.floor(Math.random() * 10);
+        numberDisplay.innerHTML = randomNumber;
+        question.innerHTML = "앞서 들린 숫자에 보이는 숫자("+randomNumber+")가 있었나요?";
+        notion.style.display = 'none';
+        question.style.display = "block";
+        numberDisplay.style.visibility = 'visible';
+        yesButton.style.visibility = 'visible';
+        yesButton.style.display = "block";
+        noButton.style.visibility = 'visible';
+        noButton.style.display = "block";
+        result.style.visibility = 'hidden';
+        yesButton.setAttribute("data-random-number", randomNumber);
+      }
+
+
+      function checkAnswer(isYes){
+        var randomNumber = parseInt(yesButton.getAttribute("data-random-number"));
+        var audioIndexes = [];
+        for (var i = 0; i < 3; i++){
+          var audioUrl = audioElements[i].src;
+          audioIndexes.push(audioFiles.indexOf(audioUrl));
+        }
+        answer.innerHTML = "방금 나온 숫자는 : "+ audioIndexes[0]+ ", "+ audioIndexes[1]+", "+audioIndexes[2]+ "입니다.";
+        answer.style.display = 'block';
+        result.style.display = 'block';
+        result.style.visibility = 'visible';
+        if(isYes){
+          if(audioIndexes.includes(randomNumber)){
+            result.innerHTML = "정답입니다!";
+          } else {
+            result.innerHTML = "오답입니다.";
+          }
+        } else {
+          if(!audioIndexes.includes(randomNumber)){
+            result.innerHTML = "정답입니다!";
+          } else {
+            result.innerHTML = "오답입니다.";
+          }
+        }
+        yesButton.style.visibility = 'hidden';
+        noButton.style.visibility = 'hidden';
+        playButton.style.visibility = 'visible';
+        audioElements.splice(0);
+      }
+    </script>
+  </body>
+</html>
