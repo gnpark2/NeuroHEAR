@@ -399,4 +399,4 @@ function calculateScore(){
 
 ### 사이트 링크
 
-우리들의 사이트 : [NeuroHEAR](https://gnpark2.wixsite.com/my-site-1)
+우리들의 사이트 : [NeuroHEAR](https://neurohear.wixsite.com/ourhearo)
